@@ -1,6 +1,6 @@
-### Soobin-Park
 
-<div style="text-align:center;">
+
+<div align="center">
   
 ![mutsa_image](mutsa_session2.gif) <br>
 
@@ -11,4 +11,5 @@
 
 <br>
 Hello World~ ʕ̡̢̡ʘ̅͟͜ʘ̲̅ʔ̢̡̢  .. ~. ...ଲ༼Ꙩ Ꙩ ଲ༽
+
 </div>
