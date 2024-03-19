@@ -1,5 +1,7 @@
-### Soobin-Park
 
+
+<div align="center">
+  
 ![mutsa_image](mutsa_session2.gif) <br>
 
 안녕하세요 저는 *`프론트엔드`* 아기사자 [박수빈](https://velog.io/@suzzang2/posts)입니다. <br>
@@ -8,6 +10,7 @@
 
 
 <br>
-```
+
 Hello World~ ʕ̡̢̡ʘ̅͟͜ʘ̲̅ʔ̢̡̢  .. ~. ...ଲ༼Ꙩ Ꙩ ଲ༽
-```
+
+</div>
