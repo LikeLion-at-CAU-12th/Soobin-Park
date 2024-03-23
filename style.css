@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+* {
+    font-family: "Bagel Fat One", system-ui;
+}
+
+#introduction {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+#title {
+  text-align: center;
+  font-size: 80px;
+}
+
+#container {
+  width: 80%;
+  border: 6px solid black;
+  background-color: white;
+  margin: auto;
+}
+
+body {
+  background-color: darkseagreen;
+}
+
+img {
+  height: 300px;
+  margin-left: 30%;
+  border-radius: 20px;
+  margin-right: 50px;
+}
+
+.description {
+  display: inline-block;
+  font-size: 30px;
+}
+
+section {
+  margin: 50px;
+  border: 2px solid grey;
+  margin-inline: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  color: orange;
+}
+
+#content {
+    font-size: 80%;
+}
+
+.img-container {
+    display: flex;
+  }
+  
+.img-container img {
+    margin-right: 30px; 
+    margin-left: -4px; /*왼쪽으로 보내기 위함*/
+  }
+  
