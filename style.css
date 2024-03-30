@@ -82,7 +82,6 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    
 }
 
 section {
@@ -137,20 +136,16 @@ section {
 }
 
 /* other */
-/* 목록 기호 없애기 */
-ul {
-    list-style-type: square;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 세로 방향으로 가운데 정렬 */
-    align-items: center; /* 가로 방향으로 가운데 정렬 */
-}
-
 li {
     margin: 5px;
     border-top: 1px solid #696100; /* 위쪽에 1픽셀 두께의 선 추가 */
     border-bottom: 1px solid #696100; /* 아래쪽에 1픽셀 두께의 선 추가 */
+}
+nav {
+    margin: 5px;
+    border-top: 1px solid #696100; /* 위쪽에 1픽셀 두께의 선 추가 */
+    border-bottom: 1px solid #696100;
+    color: #696100; /* 아래쪽에 1픽셀 두께의 선 추가 */
 }
 
 a {
@@ -184,12 +179,12 @@ span {
 /* media query */
 @media all and (max-width:479px){
     header{
-        font-size: 20px;
+        font-size: 17px;
     }
     aside{
         width: 15%;
         height: 100%;
-        font-size: 8px; 
+        font-size: 7px; 
     }
     footer img{
         width: 1rem;
@@ -205,9 +200,6 @@ span {
     section {
         font-size: 10px;
         line-height: 15px;
-    }
-    #language img {
-        
     }
 }
     
