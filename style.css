@@ -89,19 +89,53 @@ main {
 section {
     background-color: beige;
     width: 95%;
-    height: 100%;
-    display: flex;
-    color:rgb(60, 60, 60);
 
+    color:rgb(60, 60, 60);
+    font-size: 13px;
+
+    display: flex;
+    flex-direction: column;
 
     border-radius: 5px;
     margin: 5px;
-   padding-left: 20px;
+    padding: 15px;
+
+    line-height: 25px; /* 줄 간격 */
 }
 
 
+#language {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* 넘치는 아이템을 다음 줄로 내려가도록 설정 */
+}
+#language img {
+    max-width: 40px;
+    max-height: 45px;
+    display: block;
+    flex: 1 0 25%; /* 아이템의 너비를 25%로 설정하여 한 줄당 4개씩 배치 */
+}
 
+#work {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+}
+#site {
+    display: flex;
+    flex-direction: row; /* 행 방향으로 아이템을 배치 */
+    justify-content: center; /* 아이템을 수평 방향으로 중앙 정렬 */
+    align-items: center; /* 아이템을 수직 방향으로 중앙 정렬 */}
+#one img {
+    display: block;
+}
 
+#one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* other */
 /* 목록 기호 없애기 */
@@ -125,6 +159,10 @@ a {
     -webkit-text-stroke: 0.7px rgb(33, 24, 0);
 }
 
+a:link{
+    color: rgb(86, 63, 0);
+
+}
 /* 마우스가 링크 위로 올라갔을 때 */
 a:hover {
     color: rgb(33, 24, 0);
@@ -133,4 +171,12 @@ a:hover {
 /* 링크를 클릭한 후 */
 a:active {
     color: rgb(152, 156, 119);
+}
+
+#about img{
+    width: 80%;
+}
+
+span {
+    font-size: 160%;
 }
