@@ -135,6 +135,19 @@ section {
     align-items: center;
 }
 
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 5rem;
+}
+
+article img{
+    width: 80%;
+    margin-bottom: 1.5rem;
+}
+
 /* other */
 li {
     margin: 5px;
