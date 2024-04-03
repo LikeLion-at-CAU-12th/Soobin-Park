@@ -38,7 +38,7 @@ button {
 }
 
 .change-reverse {
-  border: black solid 2px;
+  border: rgb(0, 0, 0) solid 2px;
   background-color: black;
   color: white;
   text-align: center;
@@ -58,7 +58,7 @@ button {
 }
 
 .contents {
-  border: black solid 4px;
+  border: rgb(0, 0, 0) solid 4px;
 }
 
 /* section1(점수판) */
@@ -158,3 +158,44 @@ button {
 }
 
 
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #191919;
+    color: white;
+    .contents {
+      border: white solid 4px;
+    }
+    .change-reverse {
+      border: white solid 2px;
+      background-color: white;
+      color: black;
+    }
+    .contents {
+      border: white solid 4px;
+    }
+    .fa-regular {
+      border: white 4px solid;
+    }
+    .title {
+      border-bottom: white solid 3px;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: #000;
+  }
+}
+
+body[data-theme="dark"] {
+  background-color: #000;
+  color: white;
+}
+
+body[data-theme="light"] {
+  background-color: white;
+  color: #000;
+}
