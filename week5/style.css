@@ -69,22 +69,23 @@ button {
 
 /* section2(경기장) */
 .display-section {
-    height: 60%;
-    font-size: 45px;
-  }
-  .display-main {
-    flex-basis: 40%;
-    align-items: center;
-    gap: 30px;
-  }
-  #display-result{
-      flex-basis: 20%;
-      text-align: center;
-  }
-  #display-title{
-      width: 100px;
-      text-align: center;
-  }
+  height: 60%;
+  font-size: 45px;
+}
+.display-main {
+  flex-basis: 40%;
+  align-items: center;
+  gap: 30px;
+}
+#display-result{
+    flex-basis: 20%;
+    text-align: center;
+}
+#display-title{
+    width: 100px;
+    text-align: center;
+}
+
 
 /* section3(버튼) */
 .button-section {
@@ -155,3 +156,5 @@ button {
 .title {
   border-bottom: black solid 3px;
 }
+
+
