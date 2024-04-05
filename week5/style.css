@@ -183,6 +183,13 @@ button {
   border: white solid 4px;
 }
 
+footer {
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 
 /* media query */
 @media (max-width: 420px) {
