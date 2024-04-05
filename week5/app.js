@@ -11,10 +11,9 @@ const paperBtn = document.getElementById("paper")
 
 const resultText = document.getElementById("display-result")
 
-const winner = "";
-
-const myScore = 0;
-const comScore = 0;
+//수정 가능한 전역변수
+var myScore = 0;
+var comScore = 0;
 
 /*********** 이벤트 등록부 ************/
 // 각 버튼을 'click'하면 'displayMyChoice' 함수가 실행됨 -> 클릭할 때마다 이 함수가 실행되어 상태가 update 되고 반복되는 것
@@ -79,23 +78,23 @@ function calculateResult() {
 
   if(myChoice === comChoice){
     resultText.innerText = "draw";
-    winner = "none";
   }
   else if(myChoice === "rock" && comChoice === "scissors" || myChoice === "scissors" && comChoice === "paper" || myChoice === "paper" && comChoice === "rock"){
     resultText.innerText = "win";
-    winner = "me";
   }
   else{
     resultText.innerText = "lose";
-    winner = "com";
   }
 }
 
 function updateScore(){
-  if(winner === "me"){
+  if(resultText.innerText === "win"){
     myScore++;
   }
-  else if(winner === "com"){
+  else if(resultText.innerText === "lose"){
     comScore++;
   }
+  //점수판 업데이트
+  document.querySelector(".my-score").innerText = myScore;
+  document.querySelector(".computer-score").innerText = comScore;
 }
