@@ -158,11 +158,42 @@ button {
 }
 
 
-/* dark mode */
+#mode-button {
+  font-size: 15px;
+  border: black solid 2.7px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+
+/* dark mode by button*/
+.dark-mode {
+  background-color: black;
+  color: white;
+  border: white solid 2px;
+}
+.dark-mode #mode-button {
+  border: white solid 2.7px;
+}
+.dark-mode #reset-button {
+  border: white solid 2.7px;
+}
+.dark-mode .fa-regular{
+  border: white solid 2.7px;
+}
+.dark-mode .title{
+  border-bottom: white solid 3px;
+}
+.dark-mode .contents{
+  border: white solid 4px;
+}
+
+/* dark mode by system */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #191919;
     color: white;
+
     .contents {
       border: white solid 4px;
     }
@@ -172,23 +203,17 @@ button {
       color: black;
     }
     .contents {
-      border: white solid 4px;
+      border: white;
     }
     .fa-regular {
-      border: white 4px solid;
+      border: white;
     }
     .title {
-      border-bottom: white solid 3px;
+      border-bottom: white;
     }
   }
 }
 
-#mode-button {
-  font-size: 20px;
-  border: #000 solid 3px;
-  border-radius: 10px;
-  padding: 3px;
-}
 
 @media (prefers-color-scheme: light) {
   body {

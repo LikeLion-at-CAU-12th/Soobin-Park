@@ -9,8 +9,10 @@ const rockBtn = document.getElementById("rock")
 const scissorsBtn = document.getElementById("scissors")
 const paperBtn = document.getElementById("paper")
 const resetBtn = document.getElementById("reset-button")
+const modeBtn = document.getElementById("mode-button")
 
 const resultText = document.getElementById("display-result")
+const modeText = document.getElementById("mode-button")
 
 //수정 가능한 전역변수
 var myScore = 0;
@@ -22,6 +24,7 @@ rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
 paperBtn.addEventListener("click", displayMyChoice);
 resetBtn.addEventListener("click", resetGame);
+modeBtn.addEventListener("click", changeMode);
 
 /*********** 함수 선언부 ************/
 // < 사용자가 선택한 항목을 화면에 표시하는 함수 >
@@ -117,3 +120,14 @@ function resetGame(){
 
 //위의 두 함수에서 점수판 렌더링 하는 부분이 겹치니까.. 
 //이 점수판 렌더링 함수를 따로 만들까 고민
+
+function changeMode(){
+  document.body.classList.toggle("dark-mode");
+
+  if(document.body.classList.contains("dark-mode")){
+    modeText.innerText = "Mode : 🌙";
+  }
+  else{
+    modeText.innerText = "Mode : ☀️";
+  }
+}
