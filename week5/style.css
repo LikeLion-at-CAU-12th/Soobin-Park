@@ -166,7 +166,7 @@ button {
 }
 
 
-/* dark mode by button*/
+/* dark mode */
 .dark-mode {
   background-color: black;
   color: white;
@@ -183,49 +183,6 @@ button {
   border: white solid 4px;
 }
 
-/* dark mode by system */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #191919;
-    color: white;
-
-    .contents {
-      border: white solid 4px;
-    }
-    .change-reverse {
-      border: white solid 2px;
-      background-color: white;
-      color: black;
-    }
-    .contents {
-      border: white;
-    }
-    .fa-regular {
-      border: white;
-    }
-    .title {
-      border-bottom: white;
-    }
-  }
-}
-
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: #000;
-  }
-}
-
-body[data-theme="dark"] {
-  background-color: #000;
-  color: white;
-}
-
-body[data-theme="light"] {
-  background-color: white;
-  color: #000;
-}
 
 /* media query */
 @media (max-width: 420px) {
