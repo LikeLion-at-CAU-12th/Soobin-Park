@@ -1,4 +1,4 @@
-/*********** 변수 선언부 ************/
+/*********** 전역변수 선언부 ************/
 const myHandText = document.getElementById("my-hand-text")
 const myHandIcon = document.getElementById("my-hand-icon")
 
@@ -11,6 +11,10 @@ const paperBtn = document.getElementById("paper")
 
 const resultText = document.getElementById("display-result")
 
+const winner = "";
+
+const myScore = 0;
+const comScore = 0;
 
 /*********** 이벤트 등록부 ************/
 // 각 버튼을 'click'하면 'displayMyChoice' 함수가 실행됨 -> 클릭할 때마다 이 함수가 실행되어 상태가 update 되고 반복되는 것
@@ -63,6 +67,7 @@ function start(myChoice) {
   let resultArray = getComChoice();
   displayComChoice(resultArray); //랜덤으로 받아온 컴퓨터의 선택을 화면에 표시
   calculateResult();
+  updateScore(); 
 }
 
 ///****  여기부터 suzzang's code  ****///
@@ -74,11 +79,23 @@ function calculateResult() {
 
   if(myChoice === comChoice){
     resultText.innerText = "draw";
+    winner = "none";
   }
   else if(myChoice === "rock" && comChoice === "scissors" || myChoice === "scissors" && comChoice === "paper" || myChoice === "paper" && comChoice === "rock"){
     resultText.innerText = "win";
+    winner = "me";
   }
   else{
     resultText.innerText = "lose";
+    winner = "com";
+  }
+}
+
+function updateScore(){
+  if(winner === "me"){
+    myScore++;
+  }
+  else if(winner === "com"){
+    comScore++;
   }
 }
