@@ -170,17 +170,12 @@ button {
 .dark-mode {
   background-color: black;
   color: white;
-  border: white solid 2px;
 }
-.dark-mode #mode-button {
+
+.dark-mode #reset-button, .dark-mode #mode-button, .dark-mode .fa-regular{
   border: white solid 2.7px;
 }
-.dark-mode #reset-button {
-  border: white solid 2.7px;
-}
-.dark-mode .fa-regular{
-  border: white solid 2.7px;
-}
+
 .dark-mode .title{
   border-bottom: white solid 3px;
 }
@@ -230,4 +225,27 @@ body[data-theme="dark"] {
 body[data-theme="light"] {
   background-color: white;
   color: #000;
+}
+
+/* media query */
+@media (max-width: 420px) {
+
+  #display-title {
+    font-size: 35px;
+  }
+  #contents-wrapper {
+    width: 350px;
+    height: 400px;
+  }
+  .icon-container {
+    font-size: 50px;
+  }
+  #my-hand-text,
+  #computer-hand-text {
+    font-size: 30px;
+  }
+  #display-result {
+    font-size: 40px;
+  }
+
 }
