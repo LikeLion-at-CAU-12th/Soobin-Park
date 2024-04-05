@@ -9,9 +9,11 @@ const rockBtn = document.getElementById("rock")
 const scissorsBtn = document.getElementById("scissors")
 const paperBtn = document.getElementById("paper")
 
+const resultText = document.getElementById("display-result")
+
 
 /*********** 이벤트 등록부 ************/
-// 각 버튼을 'click'하면 'displayMyChoice' 함수가 실행됨 
+// 각 버튼을 'click'하면 'displayMyChoice' 함수가 실행됨 -> 클릭할 때마다 이 함수가 실행되어 상태가 update 되고 반복되는 것
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
 paperBtn.addEventListener("click", displayMyChoice);
@@ -25,10 +27,11 @@ function displayMyChoice(e){
   let clickedBtn = e.currentTarget.id;
   let clickedicon = e.target.className;
 
+  // 사용자의 icon과 text 업데이트
   myHandText.innerText = clickedBtn;
   myHandIcon.className = clickedicon;
 
-  start(clickedBtn);
+  start(clickedBtn); //사용자가 선택한 항목을 인자로 넘겨주면서 게임 한 판을 시작함
 }
 
 // < 컴퓨터의 선택을 랜덤으로 가져오는 함수 >
@@ -58,5 +61,24 @@ function displayComChoice(result) {
 // < 게임을 시작하는 함수 >
 function start(myChoice) {
   let resultArray = getComChoice();
-  displayComChoice(resultArray);
+  displayComChoice(resultArray); //랜덤으로 받아온 컴퓨터의 선택을 화면에 표시
+  calculateResult();
+}
+
+///****  여기부터 suzzang's code  ****///
+// < 게임 결과를 계산하고 출력하는 함수 >
+function calculateResult() {
+  //서로 어떤 거 냈는지 받아오기
+  let myChoice = myHandText.innerText;
+  let comChoice = computerText.innerText;
+
+  if(myChoice === comChoice){
+    resultText.innerText = "draw";
+  }
+  else if(myChoice === "rock" && comChoice === "scissors" || myChoice === "scissors" && comChoice === "paper" || myChoice === "paper" && comChoice === "rock"){
+    resultText.innerText = "win";
+  }
+  else{
+    resultText.innerText = "lose";
+  }
 }
