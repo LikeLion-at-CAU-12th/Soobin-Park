@@ -8,6 +8,7 @@ const computerIcon = document.getElementById("computer-hand-icon")
 const rockBtn = document.getElementById("rock")
 const scissorsBtn = document.getElementById("scissors")
 const paperBtn = document.getElementById("paper")
+const resetBtn = document.getElementById("reset-button")
 
 const resultText = document.getElementById("display-result")
 
@@ -20,7 +21,7 @@ var comScore = 0;
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
 paperBtn.addEventListener("click", displayMyChoice);
-
+resetBtn.addEventListener("click", resetGame);
 
 /*********** 함수 선언부 ************/
 // < 사용자가 선택한 항목을 화면에 표시하는 함수 >
@@ -98,3 +99,21 @@ function updateScore(){
   document.querySelector(".my-score").innerText = myScore;
   document.querySelector(".computer-score").innerText = comScore;
 }
+
+function resetGame(){
+  //점수 리셋
+  myScore = 0;
+  comScore = 0;
+  //점수판 리셋
+  document.querySelector(".my-score").innerText = myScore;
+  document.querySelector(".computer-score").innerText = comScore;
+  //경기장 리셋
+  myHandText.innerText = "";
+  myHandIcon.className = "fas fa-question";
+  computerText.innerText = "";
+  computerIcon.className = "fas fa-question";
+  resultText.innerText = "";
+}
+
+//위의 두 함수에서 점수판 렌더링 하는 부분이 겹치니까.. 
+//이 점수판 렌더링 함수를 따로 만들까 고민
