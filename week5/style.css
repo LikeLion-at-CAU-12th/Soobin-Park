@@ -183,6 +183,13 @@ button {
   }
 }
 
+#mode-button {
+  font-size: 20px;
+  border: #000 solid 3px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: white;
