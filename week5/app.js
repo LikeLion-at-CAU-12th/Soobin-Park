@@ -38,7 +38,7 @@ function displayMyChoice(e){
   myHandText.innerText = clickedBtn;
   myHandIcon.className = clickedicon;
 
-  start(clickedBtn); //사용자가 선택한 항목을 인자로 넘겨주면서 게임 한 판을 시작함
+  start();
 }
 
 // < 컴퓨터의 선택을 랜덤으로 가져오는 함수 >
@@ -66,7 +66,7 @@ function displayComChoice(result) {
 }
 
 // < 게임을 시작하는 함수 >
-function start(myChoice) {
+function start() {
   let resultArray = getComChoice();
   displayComChoice(resultArray); //랜덤으로 받아온 컴퓨터의 선택을 화면에 표시
   calculateResult();
