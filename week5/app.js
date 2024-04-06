@@ -99,8 +99,7 @@ function updateScore(){
     comScore++;
   }
   //점수판 업데이트
-  document.querySelector(".my-score").innerText = myScore;
-  document.querySelector(".computer-score").innerText = comScore;
+  printScore(myScore, comScore);
 }
 
 function resetGame(){
@@ -108,8 +107,7 @@ function resetGame(){
   myScore = 0;
   comScore = 0;
   //점수판 리셋
-  document.querySelector(".my-score").innerText = myScore;
-  document.querySelector(".computer-score").innerText = comScore;
+  printScore(myScore, comScore);
   //경기장 리셋
   myHandText.innerText = "";
   myHandIcon.className = "fas fa-question";
@@ -118,8 +116,10 @@ function resetGame(){
   resultText.innerText = "";
 }
 
-//위의 두 함수에서 점수판 렌더링 하는 부분이 겹치니까.. 
-//이 점수판 렌더링 함수를 따로 만들까 고민
+function printScore(myScore, comScore){
+  document.querySelector(".my-score").innerText = myScore;
+  document.querySelector(".computer-score").innerText = comScore;
+}
 
 function changeMode(){
   document.body.classList.toggle("dark-mode");
