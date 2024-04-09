@@ -12,8 +12,11 @@
 
 <br>
 
-Hello World~ ʕ̡̢̡ʘ̅͟͜ʘ̲̅ʔ̢̡̢  .. ~. ...ଲ༼Ꙩ Ꙩ ଲ༽
+Hello World~ ʕ̡̢̡ʘ̅͟͜ʘ̲̅ʔ̢̡̢  .. ~. ...ଲ༼Ꙩ Ꙩ ଲ༽ <br>
+
+![](https://media.tenor.com/5XvhW-iyx1wAAAAi/hatsune-miku-hatsune.gif) <br>
+chew~
 
 ---
-
 </div>
+
