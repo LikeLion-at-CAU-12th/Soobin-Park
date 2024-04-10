@@ -28,20 +28,22 @@ class TodoController {
         const todoList = document.getElementById("to-do-list");
         todoList.removeChild(this.newTodo.getRow());
     }
-    
+
     doneTodo(){
         this.innerNode.classList.toggle('done-text');
         this.comBtnNode.classList.toggle('done-btn');
 
-        if(this.comBtnNode.innerText === '미완'){
-            this.comBtnNode.innerText='완료';
-            // this.innerText.node.classList.remove('done-text');
-            // this.completeBtn.node.classList.remove('done-btn');
-        } else {
-            this.comBtnNode.innerText = '미완';
-            // this.innerText.node.classList.toggle('done-text');
-            // this.completeBtn.node.classList.toggle('done-btn');
-        }
+        // if(this.comBtnNode.innerText === '미완'){
+        //     this.comBtnNode.innerText='완료';
+        //     // this.innerText.node.classList.remove('done-text');
+        //     // this.completeBtn.node.classList.remove('done-btn');
+        // } else {
+        //     this.comBtnNode.innerText = '미완';
+        //     // this.innerText.node.classList.toggle('done-text');
+        //     // this.completeBtn.node.classList.toggle('done-btn');
+        // }
+        const todoList = document.getElementById("to-do-list");
+        todoList.removeChild(this.newTodo.getRow()); //상태 바꾸는 거 대신에 아예 사라지게
     }
 
 }
