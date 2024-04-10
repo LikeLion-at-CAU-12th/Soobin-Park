@@ -38,7 +38,7 @@ article{
     justify-content: center;
     height: 20%;
     min-height: 150px;
-    background-color: #fbacb4;
+    background-color: #91c2ef;
     gap: 20px;
 }
 
@@ -46,7 +46,7 @@ article{
     justify-content: center;
     height: 15%;
     min-height: 80px;
-    background-color: #8f4351;
+    background-color: #efdf91;
 }
 
 #input-box{
@@ -99,4 +99,47 @@ button{
     article{
         width: 90%;
     }
+}
+
+
+
+
+
+.row{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c7e4ff;
+}
+.text-box{
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.complete-btn{
+    color: white;
+    background-color: #4d81b1;
+}
+.complete-btn:hover{
+    cursor: pointer;
+    background-color: #c4e2ff;
+}
+
+.del-btn{
+    color: white;
+    background-color: #5e5e5e;
+}
+.del-btn:hover{
+    cursor: pointer;
+    background-color: #e20000;
+}
+
+.done-text{
+    text-decoration: line-through;
+    color: #808080;
+}
+
+.done-btn{
+    background-color: #5e5e5e;
 }
