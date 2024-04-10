@@ -1,6 +1,7 @@
 import Todo from "../DOM/Todo.js";
 
 class TodoController {
+    //constructor
     constructor(todo){
         this.newTodo = new Todo(todo);
         this.delBtnNode = this.newTodo.getDelBtn();
@@ -14,16 +15,20 @@ class TodoController {
             this.doneTodo();
         })
     }
+
+    //method 
     addTodo(){
         const todoList = document.getElementById("to-do-list");
         const input = document.querySelector('input');
         todoList.appendChild(this.newTodo.addRow());
         input.value=''
     }
+
     delTodo(){
         const todoList = document.getElementById("to-do-list");
         todoList.removeChild(this.newTodo.getRow());
     }
+    
     doneTodo(){
         this.innerNode.classList.toggle('done-text');
         this.comBtnNode.classList.toggle('done-btn');
