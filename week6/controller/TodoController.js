@@ -10,13 +10,16 @@ class TodoController {
         this.innerNode = this.newTodo.getInnerText();
 
         this.delBtnNode.addEventListener('click', () => {
-            this.delTodo();
+            if(this.comBtnNode.innerText === '완료')
+                this.delTodo();
+            else
+                this.deleteComplete();
         })
         this.comBtnNode.addEventListener('click', () => {
             if(this.comBtnNode.innerText === '완료')
                 this.doneTodo();
             else
-                this.restoreTodo();
+                this.restoreComplete();
         })
     }
 
@@ -57,7 +60,7 @@ class TodoController {
         }
     }
 
-    restoreTodo(){
+    restoreComplete(){
         this.innerNode.classList.toggle('done-text');
         this.comBtnNode.classList.toggle('done-btn');
         //1. complete list에서 삭제
@@ -69,6 +72,10 @@ class TodoController {
         if(this.comBtnNode.innerText === '복구'){
             this.comBtnNode.innerText = '완료';
         }
+    }
+    deleteComplete(){
+        const completeList = document.getElementById("complete-list");
+        completeList.removeChild(this.newTodo.getRow());
     }
 
 }

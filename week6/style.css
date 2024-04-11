@@ -136,7 +136,7 @@ button{
 }
 
 .done-text{
-    /* text-decoration: line-through; completelist에 들어가면 취소선 안함 */
+    text-decoration: line-through; 
     color: #808080;
 }
 
