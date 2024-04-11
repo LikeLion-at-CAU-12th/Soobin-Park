@@ -10,7 +10,6 @@ class Todo {
     }
 
     //method
-    //html에 추가한 할 일을 삽입
     addRow(){
         [this.innerText, this.completeBtn, this.delBtn].forEach((dom)=>{
             this.row.appendChild(dom.node);
