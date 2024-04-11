@@ -5,8 +5,8 @@ class Todo {
     constructor(todo) {
         this.row = new Div('', 'row').node;
         this.innerText = new Div(todo, 'text-box');
-        this.completeBtn = new Button('완료', 'complete-btn');
-        this.delBtn = new Button('삭제', 'del-btn');
+        this.completeBtn = new Button('완료', 'complete-btn', 'https://cdn-icons-png.flaticon.com/512/14090/14090371.png');
+        this.delBtn = new Button('삭제', 'del-btn', 'https://cdn-icons-png.flaticon.com/512/1828/1828843.png');
     }
 
     //method

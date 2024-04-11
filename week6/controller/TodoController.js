@@ -52,7 +52,7 @@ class TodoController {
         const todoList = document.getElementById("to-do-list");
         todoList.removeChild(this.newTodo.getRow()); //상태 바꾸는 거 대신에 아예 사라지게
 
-        //complete list로 이동, 이거 나중에 COmplteController로 옮기기
+        //complete list로 이동, 이거 나중에 ComplteController로 옮기기
         const completeList = document.getElementById("complete-list");
         completeList.appendChild(this.newTodo.getRow());
         if(this.comBtnNode.innerText === '완료'){
@@ -71,6 +71,7 @@ class TodoController {
         todoList.appendChild(this.newTodo.getRow());
         if(this.comBtnNode.innerText === '복구'){
             this.comBtnNode.innerText = '완료';
+
         }
     }
     deleteComplete(){

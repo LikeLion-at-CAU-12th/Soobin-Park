@@ -144,3 +144,9 @@ button{
 .done-btn{
     background-color: #5e5e5e;
 }
+
+/* suzzang */
+.button-image{
+    width: 17px;
+    margin-left: 2px;
+}
