@@ -18,7 +18,7 @@ article{
     width: 40%;
     height: 90%;
     margin-top: 30px;
-    border: 1px solid #c7e4ff;
+    border: 1px solid #c1c1c1;
     border-radius: 10px;
     overflow-y: scroll;
 }
@@ -38,7 +38,7 @@ article{
     justify-content: center;
     height: 20%;
     min-height: 150px;
-    background-color: #91c2ef;
+    background-color: #fcbdb7;
     gap: 20px;
 }
 
@@ -46,7 +46,7 @@ article{
     justify-content: center;
     height: 15%;
     min-height: 80px;
-    background-color: #efdf91;
+    background-color: #e7ffba;
 }
 
 #input-box{
@@ -81,14 +81,14 @@ button{
 }
 
 #input{
-    background-color: #4d81b1;
+    background-color: #919191;
     color: white;
     font-size: 15px;
 }
 
 #input:hover{
     cursor: pointer;
-    background-color: #c4e2ff;
+    background-color: #e8e8e8;
 }
 
 @media all and (max-width:970px){
@@ -110,7 +110,7 @@ button{
     width: 90%;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #c7e4ff;
+    border-bottom: 1px solid #d4d4d4;
 }
 .text-box{
     width: 70%;
@@ -119,11 +119,11 @@ button{
 }
 .complete-btn{
     color: white;
-    background-color: #4d81b1;
+    background-color: #919191;
 }
 .complete-btn:hover{
     cursor: pointer;
-    background-color: #c4e2ff;
+    background-color: #e8e8e8;
 }
 
 .del-btn{
@@ -136,7 +136,7 @@ button{
 }
 
 .done-text{
-    text-decoration: line-through;
+    /* text-decoration: line-through; completelist에 들어가면 취소선 안함 */
     color: #808080;
 }
 

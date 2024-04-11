@@ -44,6 +44,10 @@ class TodoController {
         // }
         const todoList = document.getElementById("to-do-list");
         todoList.removeChild(this.newTodo.getRow()); //상태 바꾸는 거 대신에 아예 사라지게
+
+        //complete list로 이동
+        const completeList = document.getElementById("complete-list");
+        completeList.appendChild(this.newTodo.getRow());
     }
 
 }
