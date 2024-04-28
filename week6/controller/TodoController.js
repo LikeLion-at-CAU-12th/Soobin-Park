@@ -41,17 +41,13 @@ class TodoController {
 
     doneTodo(){
         this.innerNode.classList.toggle('done-text');
-    this.comBtnNode.classList.toggle('done-btn');
+        this.comBtnNode.classList.toggle('done-btn');
 
-    if(this.comBtnNode.innerText === '완료'){
-        this.comBtnNode.innerText = '복구';
-    }
+        this.newTodo.completeBtn.setInnerText('복구'); //버튼 내 텍스트 바꿔주기
+        this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/128/189/189687.png");
 
-    const completeList = document.getElementById("complete-list");
-    completeList.appendChild(this.newTodo.getRow());
-
-    // const todoList = document.getElementById("to-do-list");
-    // todoList.removeChild(this.newTodo.getRow());
+        const completeList = document.getElementById("complete-list");
+        completeList.appendChild(this.newTodo.getRow());
     }
 
     restoreComplete(){
@@ -62,9 +58,9 @@ class TodoController {
         //2. todo list로 이동
         const todoList = document.getElementById("to-do-list");
         todoList.appendChild(this.newTodo.getRow());
-        if(this.comBtnNode.innerText === '복구'){ //버튼 내 텍스트 바꿔주기
-            this.comBtnNode.innerText = '완료';
-        }
+        
+        this.newTodo.completeBtn.setInnerText('완료'); //버튼 내 텍스트 바꿔주기
+        this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/512/14090/14090371.png");
     }
     delComplete(){
         const completeList = document.getElementById("complete-list");
