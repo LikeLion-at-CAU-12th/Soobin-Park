@@ -12,6 +12,10 @@ addBtn.addEventListener('click', () => {
 })
 
 compAllBtn.addEventListener('click', () => {
-    console.log('compAllBtn');
+    const completeBtns = document.querySelectorAll('#to-do-list .complete-btn');
+
+    completeBtns.forEach(btn => {
+        btn.click(); 
+    });
 })
 
