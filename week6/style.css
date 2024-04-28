@@ -151,3 +151,8 @@ button{
     width: 17px;
     margin-left: 2px;
 }
+#compAllBtn{
+    color: rgb(119, 119, 119);
+    margin-top: 10px;
+    border: 1.7px solid rgb(119, 119, 119);
+}
