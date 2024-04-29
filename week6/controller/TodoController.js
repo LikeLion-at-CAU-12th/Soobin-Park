@@ -39,7 +39,7 @@ class TodoController {
         todoList.removeChild(this.newTodo.getRow());
     }
 
-    doneTodo(item){
+    doneTodo(){
         this.newTodo.completeBtn.setInnerText('복구'); //버튼 내 텍스트 바꿔주기
         this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/128/189/189687.png");
 
