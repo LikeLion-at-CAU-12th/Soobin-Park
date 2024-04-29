@@ -40,9 +40,6 @@ class TodoController {
     }
 
     doneTodo(item){
-        // this.innerNode.classList.toggle('done-text');
-        // this.comBtnNode.classList.toggle('done-btn');
-
         this.newTodo.completeBtn.setInnerText('복구'); //버튼 내 텍스트 바꿔주기
         this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/128/189/189687.png");
 
@@ -51,8 +48,6 @@ class TodoController {
     }
 
     restoreComplete(){
-        // this.innerNode.classList.toggle('done-text');
-        // this.comBtnNode.classList.toggle('done-btn');
         //1. complete list에서 삭제
         this.delComplete();
         //2. todo list로 이동
