@@ -5,7 +5,10 @@ const input = document.querySelector('input');
 const compAllBtn = document.getElementById('compAllBtn');
 
 addBtn.addEventListener('click', () => { 
-    if (input.value === '') return; //입력값이 없으면 목록 추가 안 함(예외처리)
+    if (input.value === '') {
+        window.alert('할 일을 입력해주세요!');
+        return; //입력값이 없으면 목록 추가 안 함(예외처리)
+    }
 
     const todoControl = new TodoController(input.value);
     todoControl.addTodo();
