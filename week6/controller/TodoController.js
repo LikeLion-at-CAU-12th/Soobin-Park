@@ -40,7 +40,7 @@ class TodoController {
     }
 
     doneTodo(){
-        this.newTodo.completeBtn.setInnerText('복구'); //버튼 내 텍스트 바꿔주기
+        this.newTodo.completeBtn.setInnerText('복구'); 
         this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/128/189/189687.png");
 
         const completeList = document.getElementById("complete-list");
@@ -48,15 +48,13 @@ class TodoController {
     }
 
     restoreComplete(){
-        //1. complete list에서 삭제
-        this.delComplete();
-        //2. todo list로 이동
-        const todoList = document.getElementById("to-do-list");
-        todoList.appendChild(this.newTodo.getRow());
-        
         this.newTodo.completeBtn.setInnerText('완료'); //버튼 내 텍스트 바꿔주기
         this.newTodo.completeBtn.setImage("https://cdn-icons-png.flaticon.com/512/14090/14090371.png");
+
+        const todoList = document.getElementById("to-do-list");
+        todoList.appendChild(this.newTodo.getRow());
     }
+    
     delComplete(){
         const completeList = document.getElementById("complete-list");
         completeList.removeChild(this.newTodo.getRow());
