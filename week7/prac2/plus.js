@@ -1,4 +1,9 @@
 const baseURL = "https://apis.data.go.kr/B551011/PhotoGalleryService1";
+const urlParams = new URLSearchParams(window.location.search);
+
+const date = urlParams.get("date");
+const photoGrapher = urlParams.get("photoGrapher");
+const keyWord = urlParams.get("keyWord");
 
 const option = {
     serviceKey:
@@ -14,7 +19,12 @@ const option = {
 async function getMore(){
     console.log("getMore테스트입니다");
     const test = document.createElement("test");
-    test.innerText = "getMore테스트입니다";
+    test.innerText = `
+    getMore테스트입니다
+
+    날짜 : ${date}
+    촬영자 : ${photoGrapher}
+    키워드 : ${keyWord}`;
     document.body.appendChild(test);
 
 

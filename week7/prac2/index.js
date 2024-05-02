@@ -33,6 +33,7 @@ async function getData(){
 
     //forEach로 datas를 돌면서 하나씩 출력
     datas.map((data, i)=>{
+        console.log(data);
         const list = document.createElement("div"); //하나당 하나의 장소
         list.id = 'list';
 
@@ -48,7 +49,8 @@ async function getData(){
         const button = document.createElement("button");
         button.innerText = "더보기";
         button.addEventListener("click", ()=>{
-            window.open("plus.html", "_blank");
+            const queryString = `date=${data.galCreatedtime}&photoGrapher=${data.galPhotographer}&keyWord=${data.galSearchKeyword}`; 
+            window.open(`plus.html?${queryString}`, "_blank");
         })
 
         list.appendChild(image);
