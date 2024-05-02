@@ -1,3 +1,4 @@
+
 const baseURL = "https://apis.data.go.kr/B551011/PhotoGalleryService1";
 const container = document.getElementById("container");
 
@@ -30,6 +31,7 @@ async function getData(){
     const datas = await toJson.response.body.items.item;
     console.log(datas);
 
+    //forEach로 datas를 돌면서 하나씩 출력
     datas.map((data, i)=>{
         const list = document.createElement("div"); //하나당 하나의 장소
         list.id = 'list';
@@ -56,3 +58,8 @@ async function getData(){
         container.appendChild(list);
     })
 }
+
+// async function getMore(){
+//     console.log("getMore테스트입니다");
+
+// }
