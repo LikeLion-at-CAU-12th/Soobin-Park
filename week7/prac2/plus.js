@@ -1,6 +1,7 @@
 const baseURL = "https://apis.data.go.kr/B551011/PhotoGalleryService1";
 const urlParams = new URLSearchParams(window.location.search);
 
+const image = urlParams.get("image");
 const date = urlParams.get("date");
 const year = date.substring(2, 4);
 const month = date.substring(4, 6);
@@ -21,12 +22,15 @@ const option = {
   };
 
 async function getMore(){
-    console.log("getMore테스트입니다");
+    // console.log("getMore테스트입니다");
+    const img = document.createElement("img");
+    img.src = image;
     const test = document.createElement("test");
     test.innerText = `
     날짜 : ${year}/${month}/${day}
     촬영자 : ${photoGrapher}
     키워드 : ${keyWord}`;
+    document.body.appendChild(img);
     document.body.appendChild(test);
 
 
