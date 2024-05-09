@@ -1,5 +1,5 @@
 
-const baseURL = "https://apis.data.go.kr/B551011/PhotoGalleryService1";
+const baseURL = "http://server.templ.es:8000/guestbooks";
 const container = document.getElementById("container");
 
 const option = {
@@ -19,16 +19,19 @@ async function getData(){
     const random = Math.floor(Math.random()*100+1);
 
     //변수 값은 백틱(``) 사용, &로 연결
-    const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${random}&serviceKey=${option.serviceKey}`;
+    // const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${random}&serviceKey=${option.serviceKey}`;
 
     count ++;
-    const fetchData = await fetch(url);
+    const fetchData = await fetch(baseURL);
+    console.log("이 바로 아래가 fetch하자마자");
     console.log(fetchData);
 
+    console.log("이 아래는 json으로 변환한거");
     const toJson = await fetchData.json();
     console.log(toJson);
 
-    const datas = await toJson.response.body.items.item;
+    console.log("이 아래는 items");
+    const datas = await toJson.response.body.items.item; //
     console.log(datas);
 
     //forEach로 datas를 돌면서 하나씩 출력
@@ -60,8 +63,3 @@ async function getData(){
         container.appendChild(list);
     })
 }
-
-// async function getMore(){
-//     console.log("getMore테스트입니다");
-
-// }

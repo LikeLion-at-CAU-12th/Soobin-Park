@@ -12,6 +12,7 @@ const fetchData = () => {
         return response.json()
     })
     .then((response)=> {
+        console.log(response)
         console.log(response.frontend)
         const datas = response.frontend
 
