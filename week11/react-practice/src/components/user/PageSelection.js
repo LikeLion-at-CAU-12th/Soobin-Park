@@ -1,46 +1,66 @@
-import React from 'react'
-import styled from 'styled-components'
-import { getPerPage } from '../../apis/userlist'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { getPerPage } from '../../apis/userlist';
+import OffsetOption from '../OffsetOption';
 
-const PageSelection = ({curPage, setUserData, setCurPage}) => {
-    const handleClick = async(page) => {
-        const response = await getPerPage(0);
-        //5명씩 보여주기
-        const offset = 5;
-        const start = (page-1) * offset;
+const PageSelection = ({ curPage, setUserData, setCurPage }) => {
+    const [totalPages, setTotalPages] = useState(0);
+    const [offset, setOffset] = useState(5);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getPerPage(0); // 전체 데이터 가져오기
+            setTotalPages((response.length / offset)); // 총 페이지 수 계산
+            handleClick(1, response);
+        };
+        fetchData();
+    }, [offset]);
+
+    const handleClick = async (page, data = null) => {
+        const response = data || await getPerPage(0);
+        const start = (page - 1) * offset;
         const end = page * offset;
         const slicedData = response.slice(start, end);
-        
+
         setUserData(slicedData);
         setCurPage(page);
-    }
+    };
 
-  return (
-    <SelectionLayout>{[1,2,3,4,5,6].map(
-        (val) => 
-        <PageBox
-        key={val}
-        $active={val === curPage ? true:false}
-        onClick={() => handleClick(val)}>
-            {val}
-        </PageBox>
-    )}</SelectionLayout>
-  )
-}
+    const handleOffsetChange = (newOffset) => {
+        setOffset(parseInt(newOffset, 10));
+    };
 
-export default PageSelection
+    return (
+        <div>
+            <OffsetOption onSelectChange={handleOffsetChange} selectedValue={offset} />
+            <SelectionLayout>
+                {[...Array(totalPages)].map((_, idx) => (
+                    <PageBox
+                        key={idx}
+                        $active={idx + 1 === curPage}
+                        onClick={() => handleClick(idx + 1)}
+                    >
+                        {idx + 1}
+                    </PageBox>
+                ))}
+            </SelectionLayout>
+        </div>
+    );
+};
+
+export default PageSelection;
 
 const SelectionLayout = styled.div`
     display: flex;
     gap: 3rem;
     margin-bottom: 2rem;
-`
+`;
 
 const PageBox = styled.div`
     font-size: 2rem;
     color: ${(props) => props.$active ? "#000000" : "#C9C9C9"};
-    &:hover{
+    &:hover {
         cursor: pointer;
         color: white;
     }
-`
+`;
