@@ -4,7 +4,7 @@ import { filterType } from '../../constants/filterType'
 import { getGenderUser, getPerPage, getPartUser } from '../../apis/userlist'
 
 const UserFilter = ({setFilter, setUserData, setCurPage}) => {
-    const [activeFilter, setActiveFilter] = useState(null); //suzzang code
+    const [activeFilter, setActiveFilter] = useState('all'); //suzzang code
 
     const handleClick = async(type, param) => {
         if(type === "all"){
