@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import UserFilter from '../components/user/UserFilter'
 import UserSection from '../components/user/UserSection'
 import PageSelection from '../components/user/PageSelection'
-import OffsetOption from '../components/OffsetOption'
 
 const UserInfo = () => {
     const [userData, setUserData] = useState([]);
@@ -13,15 +12,9 @@ const UserInfo = () => {
     <MainLayout>
         <h1>🦁12기 아기사자 리스트🦁</h1>
         <ContentBox>
-            <UserFilter 
-            setFilter={setFilter}
-            setUserData={setUserData}
-            setCurPage={setCurPage}/>
+            <UserFilter setFilter={setFilter} setUserData={setUserData} setCurPage={setCurPage}/>
             <UserSection userData={userData} />
-            {filter === "all" && <PageSelection 
-            curPage={curPage}
-            setUserData={setUserData}
-            setCurPage={setCurPage} />}
+            {filter === "all" && <PageSelection curPage={curPage} setUserData={setUserData} setCurPage={setCurPage} />}
         </ContentBox>
     </MainLayout>
   )

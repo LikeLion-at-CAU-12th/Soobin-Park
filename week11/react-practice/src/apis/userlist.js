@@ -3,6 +3,7 @@ import axios from "axios";
 export const baseURL = "https://gominzipsession.o-r.kr";
 
 export const getPerPage = async(page) => {
+    console.log("getPerPage() 실행");
     const response = await axios.get(`${baseURL}/lionlist?page=${page}`);
     return response.data;
 }

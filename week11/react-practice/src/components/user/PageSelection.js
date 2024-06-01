@@ -6,10 +6,12 @@ import OffsetOption from '../OffsetOption';
 const PageSelection = ({ curPage, setUserData, setCurPage }) => {
     const [totalPages, setTotalPages] = useState(0);
     const [offset, setOffset] = useState(5);
+    const [allData, setAllData] = useState([]); // 전체 데이터를 저장할 상태
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await getPerPage(0); // 전체 데이터 가져오기
+            setAllData(response); // 전체 데이터 저장
             setTotalPages((response.length / offset)); // 총 페이지 수 계산
             handleClick(1, response);
         };
@@ -17,7 +19,7 @@ const PageSelection = ({ curPage, setUserData, setCurPage }) => {
     }, [offset]);
 
     const handleClick = async (page, data = null) => {
-        const response = data || await getPerPage(0);
+        const response = data || allData;
         const start = (page - 1) * offset;
         const end = page * offset;
         const slicedData = response.slice(start, end);

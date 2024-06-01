@@ -8,7 +8,7 @@ const UserFilter = ({setFilter, setUserData, setCurPage}) => {
 
     const handleClick = async(type, param) => {
         if(type === "all"){
-            const response = await getPerPage(1); //전체의 초기상태
+            const response = await getPerPage(0); //전체의 초기상태
             //response값을 저장하기 위해서 새로운 상태(state)가 필요하다!
             //useState를 이용해서 이 값을 저장해주도록 합시다~~
             setUserData(response);
@@ -25,6 +25,7 @@ const UserFilter = ({setFilter, setUserData, setCurPage}) => {
         setFilter(param); //다른 값으로도 변경 가능~ 
         setActiveFilter(param); //suzzang code
     }
+    
   return (
     <FilterLayout>{filterType.map(
         (data, idx) => 
