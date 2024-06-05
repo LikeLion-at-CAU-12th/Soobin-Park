@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import BookList from './pages/BookList';
 import BookDetail from './pages/BookDetail';
+import MutsaTest from './pages/MutsaTest';
+import TestResult from './pages/TestResult';
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
         <Route path="/books" element={<BookList />}>
           {/* // path="/books/:id"로 해도 동일함 */}
           <Route path=":id" element={<BookDetail />} /> 
+        </Route>
+        <Route path="/mutsaTest" element={<MutsaTest />}>
+          <Route path="result" element={<TestResult />} />
         </Route>
       </Routes>
     </AppDom>

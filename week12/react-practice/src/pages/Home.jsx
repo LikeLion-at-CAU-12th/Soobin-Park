@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <MenuDom>
-      <Title>Week12 Session</Title>
+      <Title>🪼 Week12 Session 🫧</Title>
       <StyledLink to="/books">
         📚 Book List
+      </StyledLink>
+      <StyledLink to="/mutsaTest">
+        🦁 Mutsa Test
       </StyledLink>
     </MenuDom>
   )
