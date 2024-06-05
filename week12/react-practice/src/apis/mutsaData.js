@@ -11,7 +11,7 @@ export const getQuestions = async () => {
 
 export const postAnswers = async (answers) => { //매개변수로 답안을 받음
     console.log("postAnswers() 실행");
-    const response = await axios.post(`${baseURL}/liontest/result`, answers);
+    const response = await axios.post(`${baseURL}/liontest/result`, { answers: answers });
     return response.data;
 }
 
