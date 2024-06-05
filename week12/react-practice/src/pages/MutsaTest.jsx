@@ -1,31 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import { getQuestions, postAnswers } from '../apis/mutsaData';
+import { useNavigate } from 'react-router-dom';
 
 const MutsaTest = () => {
     const [questions, setQuestions] = useState([]); // 문제들을 저장할 상태
     // 정답 배열의 길이를 문제 길이만큼 동적으로 생성!!!!!(5로 정적으로 하면 문제가 추가되면 오류 발생할 수 있어서)
     const [selectedChoices, setSelectedChoices] = useState(Array(questions.length).fill(null)); // 선택된 답변의 인덱스를 저장할 상태
+    const navigate = useNavigate();
 
     useEffect(() => {
-        // const fetchQuestions = async () => {
-        //     console.log("fetch Questions");
-        //     try {
-        //         const response = await axios.get("https://gominzipsession.o-r.kr/liontest/question");
-        //         // console.log("response:", response);
-        //         // console.log("data:", response.data);
-        //         // console.log("questions:", response.data.questions);
-        //         setQuestions(response.data.questions);
-        //         // // 선택된 답변 상태 초기화 -> 굳이 해야되나??
-        //         // setSelectedChoices(Array(response.data.questions.length).fill(null));
-        //     } catch (error) {
-        //         console.error("Error fetching questions:", error);
-        //     }
-        // };
-        // fetchQuestions(); // 효과 함수 부분(마운트 시에 실행)
         getQuestions().then((data) => {
             setQuestions(data.questions);
+            setSelectedChoices(Array(data.questions.length).fill(null));
+            console.log("selected: ");
+            console.log(selectedChoices); //이때 왜 배열 길이 0이지... 5 예상했는데..
         });
     }, []);
 
@@ -43,16 +32,25 @@ const MutsaTest = () => {
     const sendAnswers = () => {
         //전송하기 전에 1부터 시작하는 답변 번호로 변환
         const plusedChoices = selectedChoices.map((choice) => choice + 1);
+        let num;
         postAnswers(plusedChoices).then((response) => {
-            console.log(response);
+            console.log("맞은 개수 : ", response.correctCount);
+            num = response.correctCount;
+        })
+        .then(() => {
+            console.log("답변 전송 완료");
+            // 결과 페이지로 이동
+            navigate('/testResult', {state: { num : num}});
         });
     };
 
-    // 선택된 답변이 있는지 확인 후, 서버에 전송
+    // 선택되지 않은 답변이 있는지 확인 후, 함수 호출
 const handleSubmission = () => {
+    // 선택되지 않은 문제가 있을 경우 예외 처리
+    console.log(selectedChoices);
     if (selectedChoices.some(choice => choice === null)) {
         console.log("모든 질문에 대한 답변을 선택해주세요.");
-        // 선택되지 않은 질문이 있을 경우 사용자에게 메시지를 표시하거나 다른 처리를 수행할 수 있습니다.
+        alert("모든 문제에 대한 답변을 선택해주세요.");
     } else {
         // 모든 질문에 대한 답변이 선택되었을 경우, 선택된 답변을 서버에 전송
         sendAnswers();

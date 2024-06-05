@@ -15,8 +15,8 @@ export const postAnswers = async (answers) => { //매개변수로 답안을 받�
     return response.data;
 }
 
-export const getResults = async (num) => { //매개변수로 id(문제 번호)를 받음
+export const getResults = async (num) => { //매개변수로 맞힌 문제 개수를 받음
     console.log("getResults() 실행");
-    const response = await axios.get(`${baseURL}/liontest/result/:${num}`);
+    const response = await axios.get(`${baseURL}/liontest/result/${num}`);
     return response.data;
 }

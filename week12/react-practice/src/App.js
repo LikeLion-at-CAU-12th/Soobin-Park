@@ -15,9 +15,8 @@ function App() {
           {/* // path="/books/:id"로 해도 동일함 */}
           <Route path=":id" element={<BookDetail />} /> 
         </Route>
-        <Route path="/mutsaTest" element={<MutsaTest />}>
-          <Route path="result" element={<TestResult />} />
-        </Route>
+        <Route path="/mutsaTest" element={<MutsaTest />} />
+        <Route path="/testResult" element={<TestResult />} />
       </Routes>
     </AppDom>
   );
