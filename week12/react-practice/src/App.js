@@ -5,9 +5,11 @@ import BookList from './pages/BookList';
 import BookDetail from './pages/BookDetail';
 import MutsaTest from './pages/MutsaTest';
 import TestResult from './pages/TestResult';
+import './App.css';
 
 function App() {
   return (
+    <div className="App">
     <AppDom>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/testResult" element={<TestResult />} />
       </Routes>
     </AppDom>
+    </div>
   );
 }
 

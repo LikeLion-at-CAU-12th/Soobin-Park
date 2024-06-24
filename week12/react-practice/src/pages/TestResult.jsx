@@ -34,13 +34,15 @@ const TestResult = () => {
   return (
     <div>
       <ResultContainer>
-            <h1>당신은...</h1>
+            <h1>당신의 점수는...💙</h1>
             {/* 결과 데이터가 있는지 확인 */}
             {resultTitle && resultTitle.length > 0 ? (
                 // 결과 데이터가 있을 때 출력
                 <div>
+                    {/* 점수 출력 */}
+                    <h2>{num}/5</h2>
                     {/* 이미지 출력 */}
-                    <img src={resultImg} alt="Test Result" />
+                    <ResultImg src={resultImg} alt="Test Result" />
                     {/* 제목 출력 */}
                     <ResultTitle>{resultTitle}</ResultTitle>
                 </div>
@@ -49,8 +51,8 @@ const TestResult = () => {
                 <div>No resultTitle available</div>
             )}
       </ResultContainer>
-      <button onClick={goToTest}>다시 풀기</button>
-      <button onClick={() => window.location.href = "/"}>홈으로</button> {/*라우팅 말고 아예 새로고침*/}
+      <Button onClick={goToTest}>다시 풀기</Button>
+      <Button onClick={() => window.location.href = "/"}>홈으로</Button> {/*라우팅 말고 아예 새로고침*/}
     </div>
   )
 }
@@ -67,12 +69,31 @@ const ResultContainer = styled.div`
 `;
 
 const ResultImg = styled.img`
-    width: 200px;
-    height: 200px;
+  padding: 10px;
+  border: 3.5px solid #cacaca;
+  border-radius: 10px;
 `;
 
 const ResultTitle = styled.h2` 
     font-size: 30px;
 
     text-align: center;
+`;
+
+const Button = styled.button`
+    border: 2px solid #b4b4b4;
+    color: #676666;
+    background-color: #b8edfb;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 7px;
+    font-weight: 700;
+
+    &:hover {
+        background-color: #9ecfff;
+    }
+    &:active {
+        background-color: #3d9dfd;
+    }
 `;
