@@ -57,20 +57,24 @@ const handleSubmission = () => {
     }
 };
 
-    console.log(questions);
+const goToHome = () => {
+    navigate("/");
+}
 
     // 문제들을 화면에 출력
     return (
         <TestLayer>
+            <GoHomeBtn onClick={goToHome}>뒤로가기</GoHomeBtn>
             <Title>🦁 Mutsa Test 🦁</Title>
             {/* 문제를 불러오는 중 / 문제를 출력 */}
             {questions.length === 0 ? (
+                // 문제를 불러오는 중
                 <div>문제를 불러오는 중입니다...</div>
             ) : (
+                // 문제를 출력
                 <QuestionsContainer>
                     {Object.values(questions).map((question, questionIdx) => (
-                        <div key={questionIdx}>
-                            <QuestionBox>
+                            <QuestionBox key={questionIdx}>
                                 <h3>{question.question}</h3>
                                 {question.choices.map((choice, choiceIdx) => (
                                     <Choice
@@ -82,11 +86,10 @@ const handleSubmission = () => {
                                     </Choice>
                                 ))}
                             </QuestionBox>
-                        </div>
                     ))}
                 </QuestionsContainer>
             )}
-            <button onClick={handleSubmission}>답변 제출</button>
+            <SubmitBtn onClick={handleSubmission}>답변 제출</SubmitBtn>
         </TestLayer>
     );
 };
@@ -117,6 +120,8 @@ const QuestionsContainer = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin: 10px;
 `;
 
 const QuestionBox = styled.div`
@@ -124,8 +129,8 @@ const QuestionBox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    width: 100%;
+    /* gap: 20px; */
+    /* width: 100%; */
     margin: 20px;
 `;
 
@@ -148,5 +153,51 @@ const Choice = styled.div`
     }
     &:active {
         background-color: #3d9dfd;
+    }
+`;
+
+const GoHomeBtn = styled.button`
+    font-size: 12px;
+    color: #535353;
+    background-color:#cfcfcf;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 20px;
+    padding: 5px;
+    width: 70px;
+    border: none;
+    margin-right: auto;
+
+    &:hover {
+        background-color: #7d7d7d;
+        color: white;
+    }
+    &:active {
+        background-color: #5b5b5b;
+        color: white;
+    }
+`;
+
+const SubmitBtn = styled.button`
+    font-size: 20px;
+    font-weight: 700;
+    color: #535353;
+    background-color:#cfcfcf;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 20px;
+    padding: 10px;
+    width: 100px;
+    border: none;
+
+    &:hover {
+        background-color: #7d7d7d;
+        color: white;
+    }
+    &:active {
+        background-color: #5b5b5b;
+        color: white;
     }
 `;

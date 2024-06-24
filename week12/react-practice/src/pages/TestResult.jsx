@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { getResults } from '../apis/mutsaData';
 import styled from 'styled-components';
 
@@ -26,6 +26,11 @@ const TestResult = () => {
             });
     }); //여기 num 해야할지...
 
+  const navigate = useNavigate();
+  const goToTest = () => { 
+    navigate("/mutsaTest");
+  }
+
   return (
     <div>
       <ResultContainer>
@@ -44,6 +49,8 @@ const TestResult = () => {
                 <div>No resultTitle available</div>
             )}
       </ResultContainer>
+      <button onClick={goToTest}>다시 풀기</button>
+      <button onClick={() => window.location.href = "/"}>홈으로</button> {/*라우팅 말고 아예 새로고침*/}
     </div>
   )
 }

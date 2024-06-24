@@ -13,7 +13,8 @@ export default Question
 const QuestionsContainer = styled.div`
     font-size: 18px;
     color: #535353;
-    font-weight: 700;
+    font-
+    weight: 700;
     text-align: center;
     display: flex;
     flex-direction: column;
