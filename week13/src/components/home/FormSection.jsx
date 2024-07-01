@@ -9,7 +9,7 @@ import { isSubmittedAtom } from '../../recoil/atom';
 const FormSection = () => {
     const mode = useContext(ThemeColorContext);
     const navigate = useNavigate();
-    const setIsSubmitted = useSetRecoilState(isSubmittedAtom); // 함수 설정
+    const setIsSubmitted = useSetRecoilState(isSubmittedAtom); 
     const [isModalOpened, setModalOpened] = useContext(ModalContext);
 
     const handleBtn = () => {
