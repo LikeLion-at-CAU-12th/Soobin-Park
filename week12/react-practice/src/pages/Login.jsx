@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useForm } from '../hooks/useForm';
 import { login } from '../apis/user';
 
-const Home = () => {
+const Login = () => {
     const [id, onChangeId] = useForm();
     const [pw, onChangePw] = useForm();
 
@@ -15,16 +15,12 @@ const Home = () => {
             const result = await login(id, pw); 
             localStorage.setItem('access', result.accessToken);
             localStorage.setItem('refresh', result.refreshToken);
-            router('/mypage');
+            router('/');
         } catch (error) {
             alert("Please check your ID or Password again.");
         }
     };
 
-    //로그인 된 상태이면 바로 마이페이지로 이동
-    if(localStorage.getItem('access')){
-        router('/mypage');
-    }
 
     return (
         <Wrapper>
@@ -50,7 +46,7 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Login
 
 const Wrapper = styled.div`
     width: 350px;

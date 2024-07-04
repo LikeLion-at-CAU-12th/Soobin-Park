@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { getMyPage } from '../apis/user';
+import { useNavigate } from 'react-router-dom';
 
 const Mypage = () => {
     const [data, setData] = useState();
     const [lodading, setLoading] = useState(true);
+
+    const router = useNavigate();
 
     useEffect(() => {
         getMyPage().then((data) => {
@@ -12,8 +15,15 @@ const Mypage = () => {
             setLoading(false);
         }).catch((error) => {
             alert("Token is expired. Please login again.")
+            router('/'); //토큰 만료 시 로그인 페이지로 이동
         });
     },[]);
+
+    const onClick = () => {
+        localStorage.removeItem('access');
+        localStorage.removeItem('refresh');
+        router('/');
+    }
 
     if (lodading) {
         return <div>Loading...</div>
@@ -24,6 +34,9 @@ const Mypage = () => {
             <Title>User Info</Title>
             <div>Name : {data.name}</div>
             <div>Age : {data.age}</div>
+            <BtnWrapper>
+                <button onClick={onClick}>Logout</button>
+            </BtnWrapper>
         </Wrapper>
     )
 }
@@ -55,4 +68,31 @@ const Title = styled.div`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+`;
+
+const BtnWrapper = styled.div`
+  /* height: 100%;
+  width: 85%; */
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  button {
+    font-weight: 800;
+    background-color: #89cdf6;
+    color: white;
+    padding: 19px;
+    border-radius: 10px;
+    border: none;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 3px 3px skyblue;
+      color: black;
+      background-color: white;
+    }
+  }
 `;
