@@ -3,6 +3,7 @@ import { Link, Router, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { useForm } from '../hooks/useForm';
 import { login } from '../apis/user';
+import { useEffect } from 'react';
 
 const Home = () => {
     const [id, onChangeId] = useForm();
@@ -21,10 +22,14 @@ const Home = () => {
         }
     };
 
-    //로그인 된 상태이면 바로 마이페이지로 이동
+    useEffect(() => {
+          //로그인 된 상태이면 바로 마이페이지로 이동
     if(localStorage.getItem('access')){
-        router('/mypage');
+      router('/mypage');
     }
+  },[]);
+
+
 
     return (
         <Wrapper>
