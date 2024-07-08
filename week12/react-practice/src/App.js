@@ -6,12 +6,16 @@ import BookDetail from './pages/BookDetail';
 import MutsaTest from './pages/MutsaTest';
 import TestResult from './pages/TestResult';
 import './App.css';
+import Login from './pages/Login';
+import Signup from './pages/SignUp';
 
 function App() {
   return (
     <div className="App">
     <AppDom>
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<BookList />}>
           {/* // path="/books/:id"로 해도 동일함 */}
